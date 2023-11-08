@@ -43,24 +43,30 @@ void ABaseProjectile::OnHit()
 {
 }
 
-void ABaseProjectile::GetInstigatorCollisionChannel()
+void ABaseProjectile::GetInstigatorCollisionChannel(UEnum* ReturnValue)
 {
 }
+
+/*void ABaseProjectile::GetInstigatorCollisionChannel(UEnum& ReturnValue)
+{
+}*/
 
 void ABaseProjectile::CheckForGroundUnitTarget()
 {
 }
 
-void ABaseProjectile::ShouldCheckForGroundTarget()
+void ABaseProjectile::ShouldCheckForGroundTarget(bool& ReturnValue)
 {
+	//is valid
 }
 
 void ABaseProjectile::AdjustToTarget()
 {
 }
 
-void ABaseProjectile::IsEnemyProjectile()
+void ABaseProjectile::IsEnemyProjectile(bool& ReturnValue)
 {
+	ReturnValue = false;
 }
 
 void ABaseProjectile::AdjustToDesiredZ()

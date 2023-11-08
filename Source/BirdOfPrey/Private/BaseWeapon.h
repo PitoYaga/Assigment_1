@@ -4,6 +4,7 @@
 
 #include "CoreMinimal.h"
 #include "GameFramework/Actor.h"
+#include "Sound/SoundCue.h"
 #include "BaseWeapon.generated.h"
 
 UCLASS()
@@ -24,31 +25,36 @@ public:
 	virtual void Tick(float DeltaTime) override;
 
 
-
-
 public:
-	UPROPERTY(VisibleAnywhere, BlueprintReadWrite, Category="COA")
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="BOP")
+	UParticleSystem * FirePArticleEffect;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="BOP")
+	USoundCue * FireSoundCue;
+	
+	UPROPERTY(VisibleAnywhere, BlueprintReadWrite, Category="BOP")
 	bool bRequiresAimForAI;
 
-	UPROPERTY(VisibleAnywhere, BlueprintReadWrite, Category="COA")
+	UPROPERTY(VisibleAnywhere, BlueprintReadWrite, Category="BOP")
 	bool bIsAutomatic;
 
 public:
-	UFUNCTION(BlueprintCallable, Category = "BirdOfPrey")
+	UFUNCTION(BlueprintCallable, Category = "BOP")
 	virtual void StartFire();
 
-	UFUNCTION(BlueprintCallable, Category = "BirdOfPrey")
+	UFUNCTION(BlueprintCallable, Category = "BOP")
 	virtual void StopFire();
 	
-	UFUNCTION(BlueprintCallable, Category = "BirdOfPrey")
+	UFUNCTION(BlueprintCallable, Category = "BOP")
 	virtual void PlayFireEffects();
 
-	UFUNCTION(BlueprintCallable, Category = "BirdOfPrey")
-	virtual void GetFireEffectSpawnTransform();
+	UFUNCTION(BlueprintCallable, Category = "BOP")
+	virtual void GetFireEffectSpawnTransform(FVector & ReturnValueLocation, FRotator & ReturnValueRotation, FVector & ReturnValueScale); //return value - vector, rotator, vector
 
-	UFUNCTION(BlueprintCallable, Category = "BirdOfPrey")
-	virtual void HasFinishedFiring();
+	UFUNCTION(BlueprintCallable, Category = "BOP")
+	virtual void HasFinishedFiring(bool & ReturnValue); //return value - bool
 
-	UFUNCTION(BlueprintCallable, Category = "BirdOfPrey")
-	virtual void IsFiring();
+	UFUNCTION(BlueprintCallable, Category = "BOP")
+	virtual void IsFiring(bool & ReturnValue); //return value - bool
 };

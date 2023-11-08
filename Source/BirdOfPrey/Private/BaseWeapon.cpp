@@ -43,15 +43,22 @@ void ABaseWeapon::PlayFireEffects()
 {
 }
 
-void ABaseWeapon::GetFireEffectSpawnTransform()
+void ABaseWeapon::GetFireEffectSpawnTransform(FVector& ReturnValueLocation, FRotator& ReturnValueRotation,
+	FVector& ReturnValueScale)
 {
+	//ReturnValueLocation = actor location
+	//ReturnValueRotation = actor rotation
+	//ReturnValueScale = (1, 1, 1)
 }
 
-void ABaseWeapon::HasFinishedFiring()
+void ABaseWeapon::HasFinishedFiring(bool& ReturnValue)
 {
+	ReturnValue = false;
 }
 
-void ABaseWeapon::IsFiring()
+void ABaseWeapon::IsFiring(bool& ReturnValue)
 {
+	ReturnValue = false;
 }
+
 

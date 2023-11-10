@@ -31,65 +31,65 @@ public:
 
 	
 public: //Components
-	UPROPERTY(VisibleAnywhere, Category="BOP")
+	UPROPERTY(VisibleAnywhere, Category="BirdOfPrey")
 	UStaticMeshComponent* StaticMesh;
 	
-	UPROPERTY(VisibleAnywhere, Category="BOP")
+	UPROPERTY(VisibleAnywhere, Category="BirdOfPrey")
 	UCapsuleComponent* Capsule;
 
-	UPROPERTY(VisibleAnywhere, Category="BOP")
+	UPROPERTY(VisibleAnywhere, Category="BirdOfPrey")
 	UProjectileMovementComponent* ProjectileMovement;
 
 
 public: //Variables
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="BOP")
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="BirdOfPrey")
 	float ProjectileSpeed;
 
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="BOP")
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="BirdOfPrey")
 	float Damage;
 
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="BOP")
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="BirdOfPrey")
 	UParticleSystem * DetonationEmitter;
 
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="BOP")
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="BirdOfPrey")
 	float GroundUnitCheckDistance;
 
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="BOP")
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="BirdOfPreyBirdOfPrey")
 	float GroundUnitCheckAngel;
 
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="BOP")
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="BirdOfPrey")
 	ABaseGameAgent * GroundTarget;
 
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="BOP")
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="BirdOfPrey")
 	float DesiredZ;
 
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="BOP")
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="BirdOfPrey")
 	USoundBase * ImpactSound;
 
 	
 	
 public:
-	UFUNCTION(BlueprintCallable, Category = "BOP")
+	UFUNCTION(BlueprintCallable, Category = "BirdOfPrey")
 	virtual void DealDamageTo();
 
-	UFUNCTION(BlueprintCallable, Category = "BOP")
+	UFUNCTION(BlueprintCallable, Category = "BirdOfPrey")
 	virtual void OnHit();
 	
-	UFUNCTION(BlueprintCallable, Category = "BOP")
-	virtual void GetInstigatorCollisionChannel(UEnum * ReturnValue); //return value - enum
+	UFUNCTION(BlueprintCallable, Category = "BirdOfPrey")
+	virtual void GetInstigatorCollisionChannel(UEnum * ReturnValue); 
 
-	UFUNCTION(BlueprintCallable, Category = "BOP")
+	UFUNCTION(BlueprintCallable, Category = "BirdOfPrey")
 	virtual void CheckForGroundUnitTarget();
 
-	UFUNCTION(BlueprintCallable, Category = "BOP")
-	virtual void ShouldCheckForGroundTarget(bool & ReturnValue); //return value - bool
+	UFUNCTION(BlueprintCallable, Category = "BirdOfPrey")
+	virtual bool  ShouldCheckForGroundTarget(); 
 
-	UFUNCTION(BlueprintCallable, Category = "BOP")
+	UFUNCTION(BlueprintCallable, Category = "BirdOfPrey")
 	virtual void AdjustToTarget();
 
-	UFUNCTION(BlueprintCallable, Category = "BOP")
-	virtual void IsEnemyProjectile(bool & ReturnValue); //return value - bool
+	UFUNCTION(BlueprintCallable, Category = "BirdOfPrey")
+	virtual bool IsEnemyProjectile(); 
 
-	UFUNCTION(BlueprintCallable, Category = "BOP")
+	UFUNCTION(BlueprintCallable, Category = "BirdOfPrey")
 	virtual void AdjustToDesiredZ();
 };

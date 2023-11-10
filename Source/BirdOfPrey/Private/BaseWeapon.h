@@ -27,34 +27,35 @@ public:
 
 public:
 
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="BOP")
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="BirdOfPrey")
 	UParticleSystem * FirePArticleEffect;
 
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="BOP")
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="BirdOfPrey")
 	USoundCue * FireSoundCue;
 	
-	UPROPERTY(VisibleAnywhere, BlueprintReadWrite, Category="BOP")
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="BirdOfPrey")
 	bool bRequiresAimForAI;
 
-	UPROPERTY(VisibleAnywhere, BlueprintReadWrite, Category="BOP")
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="BirdOfPrey")
 	bool bIsAutomatic;
 
 public:
-	UFUNCTION(BlueprintCallable, Category = "BOP")
+	UFUNCTION(BlueprintCallable, Category = "BirdOfPrey")
 	virtual void StartFire();
 
-	UFUNCTION(BlueprintCallable, Category = "BOP")
+	UFUNCTION(BlueprintCallable, Category = "BirdOfPrey")
 	virtual void StopFire();
 	
-	UFUNCTION(BlueprintCallable, Category = "BOP")
+	UFUNCTION(BlueprintCallable, Category = "BirdOfPrey")
 	virtual void PlayFireEffects();
 
-	UFUNCTION(BlueprintCallable, Category = "BOP")
-	virtual void GetFireEffectSpawnTransform(FVector & ReturnValueLocation, FRotator & ReturnValueRotation, FVector & ReturnValueScale); //return value - vector, rotator, vector
+	UFUNCTION(BlueprintCallable, Category = "BirdOfPrey")
+	virtual void GetFireEffectSpawnTransform(FVector & ReturnValueLocation, FRotator & ReturnValueRotation, FVector & ReturnValueScale);
+		//return value - vector, rotator, vector
 
-	UFUNCTION(BlueprintCallable, Category = "BOP")
-	virtual void HasFinishedFiring(bool & ReturnValue); //return value - bool
+	UFUNCTION(BlueprintCallable, Category = "BirdOfPrey")
+	virtual bool HasFinishedFiring();
 
-	UFUNCTION(BlueprintCallable, Category = "BOP")
-	virtual void IsFiring(bool & ReturnValue); //return value - bool
+	UFUNCTION(BlueprintCallable, Category = "BirdOfPrey")
+	virtual bool IsFiring(); 
 };

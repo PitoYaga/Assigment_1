@@ -51,14 +51,15 @@ void ABaseWeapon::GetFireEffectSpawnTransform(FVector& ReturnValueLocation, FRot
 	//ReturnValueScale = (1, 1, 1)
 }
 
-void ABaseWeapon::HasFinishedFiring(bool& ReturnValue)
+bool ABaseWeapon::HasFinishedFiring()
 {
-	ReturnValue = false;
+	return true;
 }
 
-void ABaseWeapon::IsFiring(bool& ReturnValue)
+bool ABaseWeapon::IsFiring()
 {
-	ReturnValue = false;
+	return false;
 }
+
 
 
